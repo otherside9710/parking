@@ -1,10 +1,14 @@
-require('./connection.js')	
+var express = require('express');
+var app = express();
+var db = require('./connection');
 
-con.connect(function(err) {
+db.connect(function(err) {
   if (err) throw err;
   console.log("Connected!");
-  con.query("select * from zonas", function (err, result) {
+  var sql = "select * from zonas";
+  db.query(sql, function (err, result) {
     if (err) throw err;
-    console.log("Result: " + result);
+    console.log("Table created");
   });
 });
+
