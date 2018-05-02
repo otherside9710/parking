@@ -38,59 +38,61 @@
                 </div>
             </div>
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-md-1"></div>
-                                    <div class="col-md-5">
-                                        <div class="form-group">
-                                            <label>Cliente</label>
-                                            <input class="form-control" type="text" placeholder="Digite Cliente del vehiculo">
+                <form id="myForm">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label>Cliente</label>
+                                                <input class="form-control" type="text" placeholder="Digite Cliente del vehiculo">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label>Tipo Vehiculo</label>
+                                                <select class="form-control">
+                                                    <option value="ca">Carro</option>
+                                                    <option value="mo">Moto</option>
+                                                    <option value="bi">Bicicleta</option>
+                                                </select>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-5">
-                                        <div class="form-group">
-                                            <label>Tipo Vehiculo</label>
-                                            <select class="form-control">
-                                                <option value="ca">Carro</option>
-                                                <option value="mo">Moto</option>
-                                                <option value="bi">Bicicleta</option>
-                                            </select>
+                                    <div class="row">
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label>Placa</label>
+                                                <input class="form-control" type="text" placeholder="Digite Placa del vehiculo">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label>Estado</label>
+                                                <select class="form-control">
+                                                    <option value="A">Activo</option>
+                                                    <option value="I">Inactivo</option>
+                                                </select>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-1"></div>
-                                    <div class="col-md-5">
-                                        <div class="form-group">
-                                            <label>Placa</label>
-                                            <input class="form-control" type="text" placeholder="Digite Placa del vehiculo">
+                                    <br/>
+                                    <div class="row h-100 justify-content-center align-items-center">
+                                        <div class="btn-group" role="group" aria-label="Basic example">
+                                            <button type="submit" class="btn btn-info">Save</button>
+                                            <button type="button" class="btn btn-secondary">Clean</button>
                                         </div>
-                                    </div>
-                                    <div class="col-md-5">
-                                        <div class="form-group">
-                                            <label>Estado</label>
-                                            <select class="form-control">
-                                                <option value="A">Activo</option>
-                                                <option value="I">Inactivo</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br/>
-                                <div class="row h-100 justify-content-center align-items-center">
-                                    <div class="btn-group" role="group" aria-label="Basic example">
-                                        <button type="button" class="btn btn-info">Save</button>
-                                        <button type="button" class="btn btn-secondary">Clean</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                
+                </form>
+
             </div>
             <div id="footer"></div>
         </div>
