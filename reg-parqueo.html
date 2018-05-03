@@ -4,6 +4,8 @@
 <head>
     <div id="head"></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/bootstrap-datetimepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-datetimepicker.min.css">
 </head>
 <script>
     $(document).ready(function () {
@@ -11,6 +13,7 @@
         $('#head').load("fragments/head.html");
         $('#menu').load("fragments/menu.html");
         $('#footer').load("fragments/footer.html");
+        $('.datetimepicker').datetimepicker();
     });
 </script>
 
@@ -79,7 +82,7 @@
                                                             <i class="fa fa-calendar"></i>
                                                         </div>
                                                     </div>
-                                                    <input type="text" required="" class="form-control datepicker" placeholder="Ingrese Fecha Inicial">
+                                                    <input type="text" required="" class="form-control datetimepicker" placeholder="Ingrese Fecha Inicial">
                                                 </div>
                                             </div>
                                         </div>
@@ -92,7 +95,7 @@
                                                             <i class="fa fa-calendar"></i>
                                                         </div>
                                                     </div>
-                                                    <input type="text" required="" class="form-control datepicker" placeholder="Ingrese Fecha Final">
+                                                    <input type="text" required="" class="form-control datetimepicker" placeholder="Ingrese Fecha Final">
                                                 </div>
                                             </div>
                                         </div>
