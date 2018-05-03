@@ -4,8 +4,8 @@
 <head>
     <div id="head"></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="js/bootstrap-datetimepicker.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="css/wickedpicker.css" />
+    <script src="js/wickedpicker.js"></script>
 </head>
 <script>
     $(document).ready(function () {
@@ -13,7 +13,7 @@
         $('#head').load("fragments/head.html");
         $('#menu').load("fragments/menu.html");
         $('#footer').load("fragments/footer.html");
-        $('.datetimepicker').datetimepicker();
+        $('.timepicker').wickedpicker();
     });
 </script>
 
@@ -71,41 +71,13 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-1"></div>
-                                        <div class="col-md-5">
-                                            <div class="form-group">
-                                                <label>Fecha Inicial</label>
-                                                <div class="input-group mb-2">
-                                                    <div class="input-group-prepend">
-                                                        <div class="input-group-text">
-                                                            <i class="fa fa-calendar"></i>
-                                                        </div>
-                                                    </div>
-                                                    <input type="text" required="" class="form-control datetimepicker" placeholder="Ingrese Fecha Inicial">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-5">
-                                            <div class="form-group">
-                                                <label>Fecha Final</label>
-                                                <div class="input-group mb-2">
-                                                    <div class="input-group-prepend">
-                                                        <div class="input-group-text">
-                                                            <i class="fa fa-calendar"></i>
-                                                        </div>
-                                                    </div>
-                                                    <input type="text" required="" class="form-control datetimepicker" placeholder="Ingrese Fecha Final">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+
                                     <div class="row">
                                         <div class="col-md-1"></div>
                                         <div class="col-md-5">
                                             <div class="form-group">
                                                 <label>Tarifa</label>
-                                                <select class="form-control">
+                                                <select class="form-control" id="tarifa">
                                                     <option value="H">Hora</option>
                                                     <option value="D">Dia</option>
                                                 </select>
@@ -118,6 +90,64 @@
                                                     <option value="A">Activo</option>
                                                     <option value="I">Inactivo</option>
                                                 </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label>Hora Inicial</label>
+                                                <div class="input-group mb-2">
+                                                    <div class="input-group-prepend">
+                                                        <div class="input-group-text">
+                                                            <i class="fa fa-calendar"></i>
+                                                        </div>
+                                                    </div>
+                                                    <input id="hi" type="text" required="" class="form-control timepicker" placeholder="Ingrese hora Inicial">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label>Hora Final</label>
+                                                <div class="input-group mb-2">
+                                                    <div class="input-group-prepend">
+                                                        <div class="input-group-text">
+                                                            <i class="fa fa-calendar"></i>
+                                                        </div>
+                                                    </div>
+                                                    <input id="hf" type="text" required="" class="form-control timepicker" placeholder="Ingrese hora Final">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label>Fecha Inicial</label>
+                                                <div class="input-group mb-2">
+                                                    <div class="input-group-prepend">
+                                                        <div class="input-group-text">
+                                                            <i class="fa fa-calendar"></i>
+                                                        </div>
+                                                    </div>
+                                                    <input id="fi" type="text" required="" class="form-control datepicker" placeholder="Ingrese Fecha Inicial">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label>Fecha Final</label>
+                                                <div class="input-group mb-2">
+                                                    <div class="input-group-prepend">
+                                                        <div class="input-group-text">
+                                                            <i class="fa fa-calendar"></i>
+                                                        </div>
+                                                    </div>
+                                                    <input id="ff" type="text" required="" class="form-control datepicker" placeholder="Ingrese Fecha Final">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -136,6 +166,39 @@
 
             </div>
             <div id="footer"></div>
+            <script>
+                $(document).ready(function () {
+                   $('#tarifa').trigger('change');
+                }); 
+            </script>
+
+            <script>
+                $('#tarifa').on('change', function() {
+                    if ($('#tarifa').val() === "H") {
+                        $('#fi').prop("disabled", true);
+                        $('#ff').prop("disabled", true);
+
+                        $('#fi').val("");
+                        $('#ff').val("");
+                        
+                    } else {
+                        $('#fi').prop("disabled", false);
+                        $('#ff').prop("disabled", false);
+                    }
+                    
+                    if ($('#tarifa').val() === "D") {
+                        $('#hi').prop("disabled", true);
+                        $('#hf').prop("disabled", true);
+
+                        $('#hi').val("");
+                        $('#hf').val("");
+
+                    } else {
+                        $('#hi').prop("disabled", false);
+                        $('#hf').prop("disabled", false);
+                    }
+                });                    
+            </script>
         </div>
     </div>
 </body>
