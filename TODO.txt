@@ -1,0 +1,1 @@
+1. Se debe guardar en el registro de clientes el usuario que lo registro y asignarle la credencial.
