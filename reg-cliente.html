@@ -109,7 +109,9 @@
                                     <br/>
                                     <div class="row h-100 justify-content-center align-items-center">
                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                            <button type="submit" class="btn btn-info">Save</button>
+                                            <button type="button" class="btn btn-info"
+                                                onclick="$('#myForm').trigger('send')"
+                                            >Save</button>
                                             <button type="button" class="btn btn-secondary">Clean</button>
                                         </div>
                                     </div>
@@ -117,9 +119,28 @@
                             </div>
                         </div>
                     </div>
-                </form>                
+                </form>
             </div>
             <div id="footer"></div>
+            <script>
+                $('#myForm').on('send', function(){
+                    var $form = $('#myForm');
+                    var $url = "http://localhost:8000/app/clientes/form/";
+                    var $data = $form.serialize();
+                    $.ajax({
+                        type: "POST",
+                        url: $url,
+                        data: $data,
+                        success: function (response) {
+                            alert("Success");
+                            console.log(response);
+                        },
+                        error: function(error){
+                            alert("Error " + error);
+                        }
+                    });
+                });
+            </script>
         </div>
     </div>
 </body>
