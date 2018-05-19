@@ -104,7 +104,8 @@
                                                             <i class="fa fa-calendar"></i>
                                                         </div>
                                                     </div>
-                                                    <input id="hi" type="text" required="" class="form-control timepicker" placeholder="Ingrese hora Inicial">
+                                                    <input id="hi" type="text" required="" disabled="" disable-if="$('#tarifa').val() === 'D'"
+                                                           class="form-control timepicker" placeholder="Ingrese hora Inicial">
                                                 </div>
                                             </div>
                                         </div>
@@ -117,7 +118,8 @@
                                                             <i class="fa fa-calendar"></i>
                                                         </div>
                                                     </div>
-                                                    <input id="hf" type="text" required="" class="form-control timepicker" placeholder="Ingrese hora Final">
+                                                    <input id="hf" type="text" required="" disabled="" disable-if="$('#tarifa').val() === 'D'"
+                                                           class="form-control timepicker" placeholder="Ingrese hora Final">
                                                 </div>
                                             </div>
                                         </div>
@@ -133,7 +135,8 @@
                                                             <i class="fa fa-calendar"></i>
                                                         </div>
                                                     </div>
-                                                    <input id="fi" type="text" required="" class="form-control datepicker" placeholder="Ingrese Fecha Inicial">
+                                                    <input id="fi" type="text" required="" disabled="" disable-if="$('#tarifa').val() === 'H'"
+                                                           class="form-control datepicker" placeholder="Ingrese Fecha Inicial">
                                                 </div>
                                             </div>
                                         </div>
@@ -146,7 +149,8 @@
                                                             <i class="fa fa-calendar"></i>
                                                         </div>
                                                     </div>
-                                                    <input id="ff" type="text" required="" class="form-control datepicker" placeholder="Ingrese Fecha Final">
+                                                    <input id="ff" type="text" required="" disabled="" disable-if="$('#tarifa').val() === 'H'"
+                                                           class="form-control datepicker" placeholder="Ingrese Fecha Final">
                                                 </div>
                                             </div>
                                         </div>
@@ -166,39 +170,10 @@
 
             </div>
             <div id="footer"></div>
-            <script>
-                $(document).ready(function () {
-                   $('#tarifa').trigger('change');
-                }); 
-            </script>
-
-            <script>
-                $('#tarifa').on('change', function() {
-                    if ($('#tarifa').val() === "H") {
-                        $('#fi').prop("disabled", true);
-                        $('#ff').prop("disabled", true);
-
-                        $('#fi').val("");
-                        $('#ff').val("");
-                        
-                    } else {
-                        $('#fi').prop("disabled", false);
-                        $('#ff').prop("disabled", false);
-                    }
-                    
-                    if ($('#tarifa').val() === "D") {
-                        $('#hi').prop("disabled", true);
-                        $('#hf').prop("disabled", true);
-
-                        $('#hi').val("");
-                        $('#hf').val("");
-
-                    } else {
-                        $('#hi').prop("disabled", false);
-                        $('#hf').prop("disabled", false);
-                    }
-                });                    
-            </script>
+            <script src="js/plugins/1/jquery.import.js"></script>
+            <script src="js/plugins/1/jquery.components.js"></script>
+            <script src="js/plugins/src/js/jquery.initialize.min.js"></script>
+            <script src="js/plugins/MyEnable.js"></script>
         </div>
     </div>
 </body>
