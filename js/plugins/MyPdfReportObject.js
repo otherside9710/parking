@@ -36,7 +36,7 @@ $.component(".MyPdfReportObject",[],{
                             }
                             $iframe = $(this).contents().get(0);
                             let contentType = $iframe.contentType || $iframe.mimeType;
-                            if (contentType === "application/pdf" || contentType === "text/html") {
+                            if (contentType === "application/pdf" || contentType === "text/html" || contentType === "application/factory") {
                                 $("#"+$self.MODAL_ID).modal('show');
                             }
                             else if(contentType === "text/plain") {
@@ -57,7 +57,7 @@ $.component(".MyPdfReportObject",[],{
                             var form = $self.$;
                             MyLoading.cargarGif(form);
                         }
-                        $($iframe).attr("src", "/pdf/?data=" + $self.encode($self.$ajax + "?" + data));
+                        $($iframe).attr("src", $self.$ajax + "?" + data);
                     }
                     else {
                         //alert("No se encontró ningún dato para generar el reporte.");
@@ -136,7 +136,7 @@ $.component(".MyPdfReportObject",[],{
             "    <div class='col-md-4'></div>\n"+
                 "<div class='col-md-8'>" +
                     "<div class='col-md-offset-6 col-md-6 text-center'>\n"+
-            "<img alt='image' src='/v2/img/logo_ma.png' style='padding: 3px;height: 55px; display: inline'>\n"+
+            "<img alt='image' src='images/logo/logo_transparent.png' style='padding: 3px;height: 55px; display: inline'>\n"+
             "<h2 style='display: inline'>Vista Preliminar</h2>\n"+
                     "</div>\n"+
                 "</div>\n"+

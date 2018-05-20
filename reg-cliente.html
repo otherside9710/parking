@@ -38,7 +38,9 @@
                 </div>
             </div>
             <div class="container-fluid">
-                <form id="myForm">
+                <form id="myForm" class="MyValidation MyPdfReportObject"
+                ajax="http://localhost:8001/services/clientes/reportPdf"
+                event="submit">
                     <div class="row">
                         <div class="col-12">
                             <div class="card">
@@ -110,7 +112,7 @@
                                     <div class="row h-100 justify-content-center align-items-center">
                                         <div class="btn-group" role="group" aria-label="Basic example">
                                             <button type="button" class="btn btn-info"
-                                                onclick="$('#myForm').trigger('send')"
+                                                onclick="$('#myForm').trigger('submit')"
                                             >Save</button>
                                             <button type="button" class="btn btn-secondary">Clean</button>
                                         </div>
@@ -123,14 +125,13 @@
             </div>
             <div id="footer"></div>
             <script>
-                $('#myForm').on('send', function(){
+               /* $('#myForm').on('send', function(){
                     var $form = $('#myForm');
-                    var $url = "http://localhost:8000/app/clientes/form/";
+                    var $url = "http://localhost:8001/services/clientes/reportPdf?Wfi=2017-01-01&Wff=2017-02-03&concepto=CE&documento=643&type=PDF";
                     var $data = $form.serialize();
                     $.ajax({
-                        type: "POST",
+                        type: "GET",
                         url: $url,
-                        data: $data,
                         success: function (response) {
                             alert("Success");
                             console.log(response);
@@ -139,8 +140,12 @@
                             alert("Error " + error);
                         }
                     });
-                });
+                });*/|
             </script>
+            <script src="js/plugins/1/jquery.import.js"></script>
+            <script src="js/plugins/1/jquery.components.js"></script>
+            <script src="js/plugins/src/js/jquery.initialize.min.js"></script>
+            <script src="js/plugins/MyPdfReportObject.js"></script>
         </div>
     </div>
 </body>
