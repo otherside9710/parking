@@ -52,21 +52,21 @@
                                             <div class="form-group">
                                                 <div class="form-group">
                                                     <label>Vehiculo</label>
-                                                    <select class="form-control">
-                                                        <option value="01">001</option>
-                                                        <option value="02">002</option>
-                                                        <option value="03">003</option>
+                                                    <select class="MySelect form-control" name="veh_codigo"
+                                                        ajax="http://localhost:8001/services/vehiculos/findAll"
+                                                        fields="vehCodigo,vehPlaca"
+                                                        filter="vehCodigo">
                                                     </select>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-5">
                                             <div class="form-group">
-                                                <label>Usuario</label>
-                                                <select class="form-control">
-                                                    <option value="01">Julio</option>
-                                                    <option value="02">Cesar</option>
-                                                    <option value="03">Brayan</option>
+                                                <label>Usuario</label> 
+                                                <select class="MySelect form-control" name="usuaCodigo"
+                                                    ajax="http://localhost:8001/services/usuarios/findAll"
+                                                    fields="usuaCodigo,usuaNombres,usuaApellidos"
+                                                    filter="usuaCodigo">
                                                 </select>
                                             </div>
                                         </div>
@@ -173,6 +173,7 @@
             <script src="js/plugins/1/jquery.components.js"></script>
             <script src="js/plugins/src/js/jquery.initialize.min.js"></script>
             <script src="js/plugins/MyEnable.js"></script>
+            <script src="js/plugins/MySelect.js"></script>
         </div>
     </div>
 </body>

@@ -2,8 +2,8 @@
  *
  */
 
-var MyAjax = $.import("/v4/plugins/MyAjax.js");
-var MySelectActive = $.import("/v4/plugins/MySelectActive.js");
+var MyAjax = $.import("/js/plugins/MyAjax.js");
+var MySelectActive = $.import("/js/plugins/MySelectActive.js");
 
 $.component('.MySelect', [MyAjax, MySelectActive],{
     TYPE: "type",
