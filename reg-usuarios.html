@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <div id="head"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<script>
+    $(document).ready(function () {
+        $('#header').load("fragments/header.html");
+        $('#head').load("fragments/head.html");
+        $('#menu').load("fragments/menu.html");
+        $('#footer').load("fragments/footer.html");
+    });
+</script>
+
+<body class="fix-header fix-sidebar">
+    <!-- Preloader - style you can find in spinners.css -->
+    <div class="preloader">
+        <svg class="circular" viewBox="25 25 50 50">
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
+    </div>
+    <div id="main-wrapper">
+        <div class="header" id="header"></div>
+        <div id="menu" class="left-sidebar"></div>
+        <div class="page-wrapper">
+            <div class="row page-titles">
+                <div class="col-md-5 align-self-center">
+                    <h3 class="text-primary">Registro Usuarios</h3>
+                </div>
+                <div class="col-md-7 align-self-center">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="javascript:void(0)">Home</a>
+                        </li>
+                        <li class="breadcrumb-item active">Registro Usuarios</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <form id="myForm">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <div class="form-group">
+                                                    <label>Vehiculo</label>
+                                                    <select class="MySelect form-control" name="veh_codigo"
+                                                        ajax="http://localhost:8001/services/vehiculos/findAll"
+                                                        fields="vehCodigo,vehPlaca"
+                                                        filter="vehCodigo">
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label>Usuario</label> 
+                                                <select class="MySelect form-control" name="usuaCodigo"
+                                                    ajax="http://localhost:8001/services/usuarios/findAll"
+                                                    fields="usuaCodigo,usuaNombres,usuaApellidos"
+                                                    filter="usuaCodigo">
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label>Tarifa</label>
+                                                <select class="form-control" id="tarifa">
+                                                    <option value="H">Hora</option>
+                                                    <option value="D">Dia</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label>Estado</label>
+                                                <select class="form-control">
+                                                    <option value="A">Activo</option>
+                                                    <option value="I">Inactivo</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label>Hora Inicial</label>
+                                                <div class="input-group mb-2">
+                                                    <div class="input-group-prepend">
+                                                        <div class="input-group-text">
+                                                            <i class="fa fa-calendar"></i>
+                                                        </div>
+                                                    </div>
+                                                    <input id="hi" type="text" required="" disabled="" disable-if="$('#tarifa').val() === 'D'"
+                                                           class="form-control timepicker" placeholder="Ingrese hora Inicial">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label>Hora Final</label>
+                                                <div class="input-group mb-2">
+                                                    <div class="input-group-prepend">
+                                                        <div class="input-group-text">
+                                                            <i class="fa fa-calendar"></i>
+                                                        </div>
+                                                    </div>
+                                                    <input id="hf" type="text" required="" disabled="" disable-if="$('#tarifa').val() === 'D'"
+                                                           class="form-control timepicker" placeholder="Ingrese hora Final">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label>Fecha Inicial</label>
+                                                <div class="input-group mb-2">
+                                                    <div class="input-group-prepend">
+                                                        <div class="input-group-text">
+                                                            <i class="fa fa-calendar"></i>
+                                                        </div>
+                                                    </div>
+                                                    <input id="fi" type="text" required="" disabled="" disable-if="$('#tarifa').val() === 'H'"
+                                                           class="form-control datepicker" placeholder="Ingrese Fecha Inicial">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label>Fecha Final</label>
+                                                <div class="input-group mb-2">
+                                                    <div class="input-group-prepend">
+                                                        <div class="input-group-text">
+                                                            <i class="fa fa-calendar"></i>
+                                                        </div>
+                                                    </div>
+                                                    <input id="ff" type="text" required="" disabled="" disable-if="$('#tarifa').val() === 'H'"
+                                                           class="form-control datepicker" placeholder="Ingrese Fecha Final">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br/>
+                                    <div class="row h-100 justify-content-center align-items-center">
+                                        <div class="btn-group" role="group" aria-label="Basic example">
+                                            <button type="submit" class="btn btn-info">Save</button>
+                                            <button type="button" class="btn btn-secondary">Clean</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+            <div id="footer"></div>
+            <script src="js/plugins/1/jquery.import.js"></script>
+            <script src="js/plugins/1/jquery.components.js"></script>
+            <script src="js/plugins/src/js/jquery.initialize.min.js"></script>
+            <script src="js/plugins/MyEnable.js"></script>
+            <script src="js/plugins/MySelect.js"></script>
+        </div>
+    </div>
+</body>
+
+</html>
