@@ -7,62 +7,62 @@ $( function () {
 	Morris.Area( {
 		element: 'extra-area-chart',
 		data: [ {
-				period: '2001',
-				iphone: 0,
-				imac: 0,
-				ibook: 90,
-				samsung: 0,
-				android: 0
+				period: '2012',
+				Carros: 0,
+				Motos: 0,
+				Buses: 90,
+				Camiones: 0,
+				Bicicletas: 0
         }, {
-				period: '2002',
-				iphone: 10,
-				imac: 60,
-				ibook: 40,
-				samsung: 80,
-				android: 120
+				period: '2013',
+				Carros: 10,
+				Motos: 60,
+				Buses: 40,
+				Camiones: 80,
+				Bicicletas: 120
         }, {
-				period: '2003',
-				iphone: 120,
-				imac: 10,
-				ibook: 90,
-				samsung: 30,
-				android: 50
+				period: '2014',
+				Carros: 120,
+				Motos: 10,
+				Buses: 90,
+				Camiones: 30,
+				Bicicletas: 50
         }, {
-				period: '2004',
-				iphone: 0,
-				imac: 0,
-				ibook: 120,
-				samsung: 0,
-				android: 0
+				period: '2015',
+				Carros: 0,
+				Motos: 0,
+				Buses: 120,
+				Camiones: 0,
+				Bicicletas: 0
         }, {
-				period: '2005',
-				iphone: 0,
-				imac: 0,
-				ibook: 0,
-				samsung: 150,
-				android: 0
+				period: '2016',
+				Carros: 0,
+				Motos: 0,
+				Buses: 0,
+				Camiones: 150,
+				Bicicletas: 0
         }, {
-				period: '2006',
-				iphone: 160,
-				imac: 75,
-				ibook: 30,
-				samsung: 60,
-				android: 90
+				period: '2017',
+				Carros: 160,
+				Motos: 75,
+				Buses: 30,
+				Camiones: 60,
+				Bicicletas: 90
         }, {
-				period: '2007',
-				iphone: 10,
-				imac: 120,
-				ibook: 40,
-				samsung: 60,
-				android: 30
+				period: '2018',
+				Carros: 10,
+				Motos: 120,
+				Buses: 40,
+				Camiones: 60,
+				Bicicletas: 30
         }
 
 
         ],
 		lineColors: [ '#26DAD2', '#fc6180', '#62d1f3', '#ffb64d', '#4680ff' ],
 		xkey: 'period',
-		ykeys: [ 'iphone', 'imac', 'ibook', 'samsung', 'android' ],
-		labels: [ 'iphone', 'imac', 'ibook', 'samsung', 'android' ],
+		ykeys: [ 'Carros', 'Motos', 'Buses', 'Camiones', 'Bicicletas' ],
+		labels: [ 'Carros', 'Motos', 'Buses', 'Camiones', 'Bicicletas' ],
 		pointSize: 0,
 		lineWidth: 0,
 		resize: true,

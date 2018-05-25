@@ -26,14 +26,14 @@
         <div class="page-wrapper">
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
-                    <h3 class="text-primary">Registro Usuarios</h3>
+                    <h3 class="text-primary">Registro Roles</h3>
                 </div>
                 <div class="col-md-7 align-self-center">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">
                             <a href="javascript:void(0)">Home</a>
                         </li>
-                        <li class="breadcrumb-item active">Registro Usuarios</li>
+                        <li class="breadcrumb-item active">Registro Roles</li>
                     </ol>
                 </div>
             </div>
@@ -44,51 +44,17 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="row">
-                                        <div class="col-md-1"></div>
-                                        <div class="col-md-5">
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-4">
                                             <div class="form-group">
-                                                <label>Nombres</label>
-                                                <input class="form-control" name="usuaNombres" type="text" placeholder="Digite nombre del usuario">
+                                                <label>Rol Decripción</label>
+                                                <input class="form-control" type="text" placeholder="Digite descripcion del rol">
                                             </div>
                                         </div>
-                                        <div class="col-md-5">
-                                            <div class="form-group">
-                                                <label>Apellidos</label>
-                                                <input class="form-control" type="text" name="usuaApellidos" placeholder="Digite apellidos del usuario">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-1"></div>
-                                        <div class="col-md-5">
-                                            <div class="form-group">
-                                                <label>Cedula</label>
-                                                <input class="form-control" type="text" name="usuaCedula" placeholder="Digite cedula del usuario">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-5">
-                                            <div class="form-group">
-                                                <label>Ciudad</label>
-                                                <input class="form-control" type="text" name="usuaCiudad" placeholder="Digite ciudad del usuario">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-1"></div>
-                                        <div class="col-md-5">
-                                            <div class="form-group">
-                                                <label>Rol</label>
-                                                <select class="MySelect form-control" name="rolCodigo"
-                                                    ajax="http://localhost:8001/services/roles/findAll"
-                                                    fields="rolCodigo,rolDescripcion"
-                                                    filter="rolCodigo">
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-5">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <label>Estado</label>
-                                                <select class="form-control" name="usuaEstado">
+                                                <select class="form-control">
                                                     <option value="A">Activo</option>
                                                     <option value="I">Inactivo</option>
                                                 </select>
