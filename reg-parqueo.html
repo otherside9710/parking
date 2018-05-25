@@ -4,8 +4,6 @@
 <head>
     <div id="head"></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="css/wickedpicker.css" />
-    <script src="js/wickedpicker.js"></script>
 </head>
 <script>
     $(document).ready(function () {
@@ -13,7 +11,6 @@
         $('#head').load("fragments/head.html");
         $('#menu').load("fragments/menu.html");
         $('#footer').load("fragments/footer.html");
-        $('.timepicker').wickedpicker();
     });
 </script>
 
@@ -52,7 +49,7 @@
                                             <div class="form-group">
                                                 <div class="form-group">
                                                     <label>Vehiculo</label>
-                                                    <select class="MySelect form-control" name="veh_codigo"
+                                                    <select class="MySelect form-control" name="vehCodigo"
                                                         ajax="http://localhost:8001/services/vehiculos/findAll"
                                                         fields="vehCodigo,vehPlaca"
                                                         filter="vehCodigo">
@@ -85,7 +82,7 @@
                                         <div class="col-md-5">
                                             <div class="form-group">
                                                 <label>Estado</label>
-                                                <select class="form-control">
+                                                <select class="form-control" name="parEstado">
                                                     <option value="A">Activo</option>
                                                     <option value="I">Inactivo</option>
                                                 </select>
@@ -103,8 +100,8 @@
                                                             <i class="fa fa-calendar"></i>
                                                         </div>
                                                     </div>
-                                                    <input id="hi" type="text" required="" disabled="" disable-if="$('#tarifa').val() === 'D'"
-                                                           class="form-control timepicker" placeholder="Ingrese hora Inicial">
+                                                    <input id="hi" type="datetime-local" required="" 
+                                                           class="form-control datetimepicker" placeholder="Ingrese hora Inicial">
                                                 </div>
                                             </div>
                                         </div>
@@ -117,39 +114,8 @@
                                                             <i class="fa fa-calendar"></i>
                                                         </div>
                                                     </div>
-                                                    <input id="hf" type="text" required="" disabled="" disable-if="$('#tarifa').val() === 'D'"
-                                                           class="form-control timepicker" placeholder="Ingrese hora Final">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-1"></div>
-                                        <div class="col-md-5">
-                                            <div class="form-group">
-                                                <label>Fecha Inicial</label>
-                                                <div class="input-group mb-2">
-                                                    <div class="input-group-prepend">
-                                                        <div class="input-group-text">
-                                                            <i class="fa fa-calendar"></i>
-                                                        </div>
-                                                    </div>
-                                                    <input id="fi" type="text" required="" disabled="" disable-if="$('#tarifa').val() === 'H'"
-                                                           class="form-control datepicker" placeholder="Ingrese Fecha Inicial">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-5">
-                                            <div class="form-group">
-                                                <label>Fecha Final</label>
-                                                <div class="input-group mb-2">
-                                                    <div class="input-group-prepend">
-                                                        <div class="input-group-text">
-                                                            <i class="fa fa-calendar"></i>
-                                                        </div>
-                                                    </div>
-                                                    <input id="ff" type="text" required="" disabled="" disable-if="$('#tarifa').val() === 'H'"
-                                                           class="form-control datepicker" placeholder="Ingrese Fecha Final">
+                                                    <input id="hf" type="datetime-local" required="" 
+                                                           class="form-control datetimepicker" placeholder="Ingrese hora Final">
                                                 </div>
                                             </div>
                                         </div>

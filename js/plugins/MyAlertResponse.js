@@ -1,5 +1,5 @@
 /*Dev by Julio Peña*/
-var MyAlert = $.import("/v4/plugins/MyAlert.js");
+var MyAlert = $.import("/js/plugins/MyAlert.js");
 
 $.component(".MyAlertResponse", [MyAlert], {
     EVENT: "event",

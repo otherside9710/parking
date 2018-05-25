@@ -1,4 +1,4 @@
-var MyAjax = $.import("/v4/plugins/MyAjax.js");
+var MyAjax = $.import("/js/plugins/MyAjax.js");
 
 $.component(".MyForm", [MyAjax], {
     AJAX: "action",

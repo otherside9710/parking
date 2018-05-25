@@ -38,7 +38,7 @@
                 </div>
             </div>
             <div class="container-fluid">
-                <form id="myForm" class="MyValidation MyPdfReportObject" ajax="http://localhost:8001/services/clientes/reportPdf" event="submit">
+                <form id="myForm" class="MyValidation">
                     <div class="row">
                         <div class="col-12">
                             <div class="">
@@ -68,13 +68,15 @@
                                                     <div class="col-md-5">
                                                         <div class="form-group">
                                                             <label>Nombres</label>
-                                                            <input class="form-control" name="clie_nombres" type="text" placeholder="Digite nombre del cliente">
+                                                            <input class="form-control" name="clieNombres" type="text" 
+                                                             required="required"
+                                                            placeholder="Digite nombre del cliente">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-5">
                                                         <div class="form-group">
                                                             <label>Apellidos</label>
-                                                            <input class="form-control" type="text" name="clie_apellidos" placeholder="Digite apellidos del cliente">
+                                                            <input class="form-control" required type="text" name="clieApellidos" placeholder="Digite apellidos del cliente">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -83,13 +85,13 @@
                                                     <div class="col-md-5">
                                                         <div class="form-group">
                                                             <label>Cedula</label>
-                                                            <input class="form-control" type="text" name="clie_cedula" placeholder="Digite cedula del cliente">
+                                                            <input class="form-control" required type="text" name="clieCedula" placeholder="Digite cedula del cliente">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-5">
                                                         <div class="form-group">
                                                             <label>Ciudad</label>
-                                                            <input class="form-control" type="text" name="clie_ciudad" placeholder="Digite ciudad del cliente">
+                                                            <input class="form-control" type="text" name="clieCiudad" placeholder="Digite ciudad del cliente">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -98,13 +100,13 @@
                                                     <div class="col-md-5">
                                                         <div class="form-group">
                                                             <label>Direccion</label>
-                                                            <input class="form-control" type="text" name="clie_direccion" placeholder="Digite direccion del cliente">
+                                                            <input class="form-control" type="text" name="clieDireccion" placeholder="Digite direccion del cliente">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-5">
                                                         <div class="form-group">
                                                             <label>Telefono</label>
-                                                            <input class="form-control" type="text" name="clie_telefono" placeholder="Digite telfono del cliente">
+                                                            <input class="form-control" type="text" name="clieTelefono" placeholder="Digite telfono del cliente">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -113,19 +115,20 @@
                                                     <div class="col-md-5">
                                                         <div class="form-group">
                                                             <label>Email</label>
-                                                            <input class="form-control" type="email" name="clie_email" placeholder="Digite email del cliente">
+                                                            <input class="form-control" required type="email" name="clieEmail" placeholder="Digite email del cliente">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-5">
                                                         <div class="form-group">
                                                             <label>Estado</label>
-                                                            <select class="form-control" name="clie_estado">
+                                                            <select class="form-control" name="clieEstado">
                                                                 <option value="A">Activo</option>
                                                                 <option value="I">Inactivo</option>
                                                             </select>
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <center><input type="button" id="sig" class="btn" value="Siguiente.."></center>
                                             </div>
                                         </div>
                                         <div class="tab-pane container fade" id="veh">
@@ -142,16 +145,39 @@
                                                     <div class="col-md-5">
                                                         <div class="form-group">
                                                             <label>Placa</label>
-                                                            <input class="form-control" required="required" type="text" placeholder="Digite Placa del vehiculo">
+                                                            <input class="form-control" required="required" name="vehPlaca"
+                                                            type="text" placeholder="Digite Placa del vehiculo">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-5">
                                                         <div class="form-group">
                                                             <label>Tipo Vehiculo</label>
-                                                            <select class="form-control">
-                                                                <option value="ca">Carro</option>
-                                                                <option value="mo">Moto</option>
-                                                                <option value="bi">Bicicleta</option>
+                                                            <select class="MySelect form-control" name="tpvCodigo" 
+                                                                ajax="http://localhost:8001/services/tpvehiculos/findAll" 
+                                                                fields="tpvCodigo,tpvDescripcion"
+                                                                filter="tpvCodigo">
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-1"></div>
+                                                    <div class="col-md-5">
+                                                        <div class="form-group">
+                                                            <label>Zona</label>
+                                                            <select class="MySelect form-control" name="zonaCodigo" 
+                                                                ajax="http://localhost:8001/services/zonas/findAll" 
+                                                                fields="zonaCodigo,zonaDescripcion"
+                                                                filter="zonaCodigo">
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-5">
+                                                        <div class="form-group">
+                                                            <label>Estado</label>
+                                                            <select class="form-control" name="vehEstado">
+                                                                <option value="A">Activo</option>
+                                                                <option value="I">Inactivo</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -160,7 +186,7 @@
                                             <br/>
                                             <div class="row h-100 justify-content-center align-items-center">
                                                 <div class="btn-group" role="group" aria-label="Basic example">
-                                                    <button type="button" class="btn btn-info" onclick="$('#myForm').trigger('submit')">Save</button>
+                                                    <button type="button" class="btn btn-info" onclick="$('#myForm').trigger('send')">Save</button>
                                                     <button type="button" class="btn btn-secondary">Clean</button>
                                                 </div>
                                             </div>
@@ -170,17 +196,36 @@
                             </div>
                         </div>
                     </div>
+                    <div class="MyAlertResponse" id="success"
+                        alert_title="Ccosto Guardado"
+                        alert_content="El Centro de costo fue guardado correctamente!"
+                        alert_confirmbutton="OK"
+                        alert_type="success"
+                        parent="#myForm"
+                        event="on-success">
+                    </div>
+                    <div class="MyAlertResponse"
+                        alert_title="Error al guardar"
+                        alert_content="Ocurrio un problema a la hora de guardar, verifique los datos, si el problema continua, llame al provedor de software."
+                        alert_confirmbutton="OK"
+                        alert_type="error"
+                        parent="#myForm"
+                        event="on-error">
+                    </div>
                 </form>
             </div>
             <div id="footer"></div>
             <script>
-               /* $('#myForm').on('send', function(){
+                $('#myForm').on('send', function(){
                     var $form = $('#myForm');
-                    var $url = "http://localhost:8001/services/clientes/reportPdf?Wfi=2017-01-01&Wff=2017-02-03&concepto=CE&documento=643&type=PDF";
-                    var $data = $form.serialize();
+                    var $url = "http://localhost:8001/services/fabrica/transaction";
+                    var $data = $.serializeObject($form);
                     $.ajax({
-                        type: "GET",
+                        type: "POST",
                         url: $url,
+                        data: JSON.stringify($data),
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
                         success: function (response) {
                             alert("Success");
                             console.log(response);
@@ -189,14 +234,25 @@
                             alert("Error " + error);
                         }
                     });
-                });*/
+                });
             </script>
-            
+
+            <script>
+                var item = $('li.nav-item');
+            $('#sig').on('click', function(){
+                item[1].childNodes[1].click();
+            });
+            </script>
+
             <script src="js/plugins/1/jquery.import.js"></script>
             <script src="js/plugins/1/jquery.components.js"></script>
             <script src="js/plugins/src/js/jquery.initialize.min.js"></script>
             <script src="js/plugins/MyPdfReportObject.js"></script>
+            <script src="js/plugins/MySelect.js"></script>
+            <script src="js/plugins/MyForm.js"></script>
+            <script src="js/plugins/MyAlertResponse.js"></script>
         </div>
     </div>
 </body>
+
 </html>
