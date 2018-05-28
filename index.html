@@ -1,156 +1,81 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <div id="head"></div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/logo/favicon.png">
+    <title>Parking Web</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/helper.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">    
 </head>
-    <script>
-        $( document ).ready(function() {
-           $('#header').load("fragments/header.html");
-           $('#head').load("fragments/head.html");
-           $('#menu').load("fragments/menu.html"); 
-           $('#footer').load("fragments/footer.html");
-        });
-    </script>
+
 <body class="fix-header fix-sidebar">
     <!-- Preloader - style you can find in spinners.css -->
     <div class="preloader">
         <svg class="circular" viewBox="25 25 50 50">
-			<circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
     </div>
     <!-- Main wrapper  -->
     <div id="main-wrapper">
-        <!-- header header  -->
-        <div class="header" id="header"></div>
-        <!-- End header header -->
-        <!-- Left Sidebar  -->
-        <div id="menu" class="left-sidebar"></div>
-        <!-- End Left Sidebar  -->
-        <!-- Page wrapper  -->
-        <div class="page-wrapper">
-            <!-- Bread crumb -->
-            <div class="row page-titles">
-                <div class="col-md-5 align-self-center">
-                    <h3 class="text-primary">Dashboard</h3> </div>
-                <div class="col-md-7 align-self-center">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                        <li class="breadcrumb-item active">Dashboard</li>
-                    </ol>
-                </div>
-            </div>
-            <!-- End Bread crumb -->
-            <!-- Container fluid  -->
+
+        <div class="unix-login">
             <div class="container-fluid">
-                <!-- Start Page Content -->
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="card p-30">
-                            <div class="media">
-                                <div class="media-left meida media-middle">
-                                    <span><i class="fa fa-usd f-s-40 color-primary"></i></span>
-                                </div>
-                                <div class="media-body media-text-right">
-                                    <h2>15.681.20</h2>
-                                    <p class="m-b-0">Total Ingresos</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card p-30">
-                            <div class="media">
-                                <div class="media-left meida media-middle">
-                                    <span><i class="fa fa-car f-s-40 color-success"></i></span>
-                                </div>
-                                <div class="media-body media-text-right">
-                                    <h2>432</h2>
-                                    <p class="m-b-0">Parqueados</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card p-30">
-                            <div class="media">
-                                <div class="media-left meida media-middle">
-                                    <span><i class="fa fa-map-marker f-s-40 color-warning"></i></span>
-                                </div>
-                                <div class="media-body media-text-right">
-                                    <h2>25</h2>
-                                    <p class="m-b-0">Zonas</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card p-30">
-                            <div class="media">
-                                <div class="media-left meida media-middle">
-                                    <span><i class="fa fa-user f-s-40 color-danger"></i></span>
-                                </div>
-                                <div class="media-body media-text-right">
-                                    <h2>847</h2>
-                                    <p class="m-b-0">Clientes</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row bg-white m-l-0 m-r-0 box-shadow ">
-                    <!-- column -->
-                    <div class="col-lg-8">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Informacion de movimientos</h4>
-                                <div id="extra-area-chart"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- column -->
-
-                    <!-- column -->
+                <div class="row justify-content-center">
                     <div class="col-lg-4">
-                        <div class="card">
-                            <div class="card-body browser">
-                                <p class="f-w-600">Carros <span class="pull-right">90%</span></p>
-                                <div class="progress ">
-                                    <div role="progressbar" style="width: 90%; height:8px;" class="progress-bar bg-danger wow animated progress-animated"> <span class="sr-only">60% Complete</span> </div>
+                        <div class="login-content card">
+                            <div class="login-form">
+                                <div class="row">
+                                    <div class="col-md-2"></div>
+                                    <div class="col-md-5">
+                                        <img src="images/logo/logo_transparent.png">
+                                    </div>
                                 </div>
+                                <form>
+                                    <br>
+                                    <br>
+                                    <div class="form-group">
+                                        <label>Cedula</label>
+                                        <input type="text" class="form-control" name="usuaCedula" placeholder="Digite su cedula">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Password</label>
+                                        <input type="password" name="usuaPassword" class="form-control" placeholder="Digite su contraseña">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Ingresar</button>
 
-                                <p class="m-t-30 f-w-600">Motos<span class="pull-right">85%</span></p>
-                                <div class="progress">
-                                    <div role="progressbar" style="width: 85%; height:8px;" class="progress-bar bg-info wow animated progress-animated"> <span class="sr-only">60% Complete</span> </div>
-                                </div>
-
-                                <p class="m-t-30 f-w-600">Buses<span class="pull-right">65%</span></p>
-                                <div class="progress">
-                                    <div role="progressbar" style="width: 65%; height:8px;" class="progress-bar bg-success wow animated progress-animated"> <span class="sr-only">60% Complete</span> </div>
-                                </div>
-
-                                <p class="m-t-30 f-w-600">Camiones<span class="pull-right">55%</span></p>
-                                <div class="progress">
-                                    <div role="progressbar" style="width: 55%; height:8px;" class="progress-bar bg-warning wow animated progress-animated"> <span class="sr-only">60% Complete</span> </div>
-                                </div>
-
-								<p class="m-t-30 f-w-600">Bicicletas<span class="pull-right">43%</span></p>
-                                <div class="progress m-b-30">
-                                    <div role="progressbar" style="width: 43%; height:8px;" class="progress-bar bg-success wow animated progress-animated"> <span class="sr-only">60% Complete</span> </div>
-                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>
-                    <!-- column -->
                 </div>
-                <!-- End PAge Content -->
             </div>
-            <!-- End Container fluid  -->
-            <div id="footer"></div>
         </div>
-        <!-- End Page wrapper  -->
+
     </div>
     <!-- End Wrapper -->
+    <!-- All Jquery -->
+    <script src="js/lib/jquery/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="js/lib/bootstrap/js/popper.min.js"></script>
+    <script src="js/lib/bootstrap/js/bootstrap.min.js"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="js/jquery.slimscroll.js"></script>
+    <!--Menu sidebar -->
+    <script src="js/sidebarmenu.js"></script>
+    <!--stickey kit -->
+    <script src="js/lib/sticky-kit-master/dist/sticky-kit.min.js"></script>
+    <!--Custom JavaScript -->
+    <script src="js/custom.min.js"></script>
+
 </body>
 
 </html>

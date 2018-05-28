@@ -38,7 +38,17 @@
                 </div>
             </div>
             <div class="container-fluid">
-                <form id="myForm">
+                <form id="myForm" class="MyForm" action="http://localhost:8001/services/usuarios/add" method="POST">
+                    <div style="display: none;">
+                        <div id="ok" class="MyAlertResponse"
+                            event="on-success"
+                            parent="#myForm"
+                            alert_title="Datos guardados"
+                            alert_content="Los datos del usuario se guardaron correctamente!"
+                            alert_type="success"
+                            alert_confirmbutton="Ok">
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col-12">
                             <div class="card">
@@ -48,13 +58,30 @@
                                         <div class="col-md-5">
                                             <div class="form-group">
                                                 <label>Nombres</label>
-                                                <input class="form-control" name="usuaNombres" type="text" placeholder="Digite nombre del usuario">
+                                                <input class="form-control" 
+                                                required
+                                                name="usuaNombres" type="text" placeholder="Digite nombre del usuario">
                                             </div>
                                         </div>
                                         <div class="col-md-5">
                                             <div class="form-group">
                                                 <label>Apellidos</label>
-                                                <input class="form-control" type="text" name="usuaApellidos" placeholder="Digite apellidos del usuario">
+                                                <input class="form-control" required  type="text" name="usuaApellidos" placeholder="Digite apellidos del usuario">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label>Constraseña</label>
+                                                <input class="form-control" required name="usuaPassword" id="pass" type="password" placeholder="Digite contraseña del usuario">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label>Confirmar Contraseña</label>
+                                                <input class="form-control" required type="password" id="pass2" name="pass2" placeholder="Repita contraseña del usuario">
                                             </div>
                                         </div>
                                     </div>
@@ -63,7 +90,7 @@
                                         <div class="col-md-5">
                                             <div class="form-group">
                                                 <label>Cedula</label>
-                                                <input class="form-control" type="text" name="usuaCedula" placeholder="Digite cedula del usuario">
+                                                <input class="form-control" required type="text" name="usuaCedula" placeholder="Digite cedula del usuario">
                                             </div>
                                         </div>
                                         <div class="col-md-5">
@@ -115,6 +142,53 @@
             <script src="js/plugins/src/js/jquery.initialize.min.js"></script>
             <script src="js/plugins/MyEnable.js"></script>
             <script src="js/plugins/MySelect.js"></script>
+            <script src="js/plugins/MyForm.js"></script>
+            <script src="js/plugins/MyAlertResponse.js"></script>
+
+            <script>
+                $('#pass2').on('blur', function() {
+                   var pass =  $('#pass').val();
+                   var pass2 =  $('#pass2').val();
+                    if (pass != "" && pass2 != "") {
+                        if (pass === pass2) {
+                            console.log("pass correct!");
+                        }else{
+                            swal({
+                                title: "Las contraseñas no coinciden",
+                                text: "Por favor vuelva a escribir la contraseña.",
+                                icon: "warning",
+                                buttons: true,
+                                dangerMode: true,
+                            });
+                            $('#pass').val("");
+                            $('#pass2').val("");
+                        }
+                    }
+                });
+                $('#pass').on('blur', function() {
+                   var pass =  $('#pass').val();
+                   var pass2 =  $('#pass2').val();
+                    if (pass != "" && pass2 != "") {
+                        if (pass === pass2) {
+                            console.log("pass correct!");
+                        }else{
+                            $('#pass').val("");
+                            $('#pass2').val("");
+                            swal({
+                                title: "Las contraseñas no coinciden",
+                                text: "Por favor vuelva a escribir la contraseña.",
+                                icon: "warning",
+                                buttons: true,
+                                dangerMode: true,
+                            });
+                        }
+                    }
+                });
+                
+                $('#ok').on('ok', function() {
+                   location.reload();
+                });
+            </script>
         </div>
     </div>
 </body>

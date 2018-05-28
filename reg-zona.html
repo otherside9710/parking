@@ -38,7 +38,7 @@
                 </div>
             </div>
             <div class="container-fluid">
-                <form id="myForm">
+                <form id="myForm" class="MyForm" action="http://localhost:8001/services/zonas/add" method="POST">
                     <div class="row">
                         <div class="col-12">
                             <div class="card">
@@ -48,8 +48,7 @@
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label>Nombre</label>
-                                                <input class="form-control" type="text" name="zonaDescripcion"
-                                                placeholder="Digite nombre de la zona">
+                                                <input class="form-control" type="text" name="zonaDescripcion" placeholder="Digite nombre de la zona">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
@@ -74,9 +73,22 @@
                         </div>
                     </div>
             </div>
+            <div class="MyAlertResponse" id="ok" 
+                alert_title="Zona Guardada" 
+                alert_content="La Zona fue guardada correctamente!" 
+                alert_confirmbutton="OK"
+                alert_type="success" 
+                parent="#myForm" 
+                event="on-success">
+            </div>
             </form>
         </div>
         <div id="footer"></div>
+        <script src="js/plugins/1/jquery.import.js"></script>
+        <script src="js/plugins/1/jquery.components.js"></script>
+        <script src="js/plugins/src/js/jquery.initialize.min.js"></script>
+        <script src="js/plugins/MyForm.js"></script>
+        <script src="js/plugins/MyAlertResponse.js"></script>
     </div>
     </div>
 </body>

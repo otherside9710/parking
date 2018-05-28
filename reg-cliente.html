@@ -196,22 +196,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="MyAlertResponse" id="success"
-                        alert_title="Ccosto Guardado"
-                        alert_content="El Centro de costo fue guardado correctamente!"
-                        alert_confirmbutton="OK"
-                        alert_type="success"
-                        parent="#myForm"
-                        event="on-success">
-                    </div>
-                    <div class="MyAlertResponse"
-                        alert_title="Error al guardar"
-                        alert_content="Ocurrio un problema a la hora de guardar, verifique los datos, si el problema continua, llame al provedor de software."
-                        alert_confirmbutton="OK"
-                        alert_type="error"
-                        parent="#myForm"
-                        event="on-error">
-                    </div>
                 </form>
             </div>
             <div id="footer"></div>
@@ -227,11 +211,23 @@
                         contentType: "application/json; charset=utf-8",
                         dataType: "json",
                         success: function (response) {
-                            alert("Success");
+                            swal({
+                                title: "Cliente Guardado",
+                                text: "El Cliente fue registrado correctamente!",
+                                icon: "success",
+                                buttons: true,
+                                dangerMode: true,
+                            });
                             console.log(response);
                         },
                         error: function(error){
-                            alert("Error " + error);
+                            swal({
+                                title: "Error Al guardar",
+                                text: "No se ha podido completar la petiticion, verifique los datos, o verifique que los servicios esten activos.",
+                                icon: "error",
+                                buttons: true,
+                                dangerMode: true,
+                            });
                         }
                     });
                 });

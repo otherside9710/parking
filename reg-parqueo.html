@@ -70,6 +70,15 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-md-1"></div>
+                                        <div class="col-md-10">
+                                            <div class="form-group">
+                                                <label for="obs">Observacion:</label>
+                                                <textarea class="form-control" rows="1" name="parObservacion" id="obs"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-1"></div>
                                         <div class="col-md-5">
                                             <div class="form-group">
                                                 <label>Tarifa</label>
@@ -93,21 +102,19 @@
                                         <div class="col-md-1"></div>
                                         <div class="col-md-5">
                                             <div class="form-group">
-                                                <label>Hora Inicial</label>
-                                                <div class="input-group mb-2">
-                                                    <div class="input-group-prepend">
-                                                        <div class="input-group-text">
-                                                            <i class="fa fa-calendar"></i>
-                                                        </div>
+                                                <label>Hora Entrada</label>
+                                                <div class="form-group">
+                                                        <label>Estado</label>
+                                                        <select class="form-control" name="parEstado">
+                                                            <option value="A">Activo</option>
+                                                            <option value="I">Inactivo</option>
+                                                        </select>
                                                     </div>
-                                                    <input id="hi" type="datetime-local" required="" 
-                                                           class="form-control datetimepicker" placeholder="Ingrese hora Inicial">
-                                                </div>
                                             </div>
                                         </div>
                                         <div class="col-md-5">
                                             <div class="form-group">
-                                                <label>Hora Final</label>
+                                                <label>Hora Salida</label>
                                                 <div class="input-group mb-2">
                                                     <div class="input-group-prepend">
                                                         <div class="input-group-text">
@@ -140,6 +147,7 @@
             <script src="js/plugins/src/js/jquery.initialize.min.js"></script>
             <script src="js/plugins/MyEnable.js"></script>
             <script src="js/plugins/MySelect.js"></script>
+            <script src="js/plugins/MyForm.js"></script>
         </div>
     </div>
 </body>
