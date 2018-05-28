@@ -39,16 +39,16 @@
                                         <img src="images/logo/logo_transparent.png">
                                     </div>
                                 </div>
-                                <form>
+                                <form id="MyForm" class="MyForm" action="http://localhost:8001/services/usuarios/login" method="POST">
                                     <br>
                                     <br>
                                     <div class="form-group">
                                         <label>Cedula</label>
-                                        <input type="text" class="form-control" name="usuaCedula" placeholder="Digite su cedula">
+                                        <input type="text" required class="form-control" name="usuaCedula" placeholder="Digite su cedula">
                                     </div>
                                     <div class="form-group">
                                         <label>Password</label>
-                                        <input type="password" name="usuaPassword" class="form-control" placeholder="Digite su contraseña">
+                                        <input type="password" required name="usuaPassword" class="form-control" placeholder="Digite su contraseña">
                                     </div>
                                     <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Ingresar</button>
 
@@ -75,6 +75,45 @@
     <script src="js/lib/sticky-kit-master/dist/sticky-kit.min.js"></script>
     <!--Custom JavaScript -->
     <script src="js/custom.min.js"></script>
+
+    <script src="js/plugins/1/jquery.import.js"></script>
+    <script src="js/plugins/1/jquery.components.js"></script>
+    <script src="js/plugins/src/js/jquery.initialize.min.js"></script>
+    <script src="js/plugins/MyForm.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        $('#MyForm').on('on-success-data', function(data, response) {
+           if (response != undefined ) {
+                swal({
+                    title: "Bienvenido!",
+                    text: "Bienvenido al sistema PARKING WEB",
+                    icon: "success",
+                    buttons: {
+                        cancel: "Cancelar",
+                        confirm: {
+                            text: "Ok",
+                            value: "Ok"
+                    }
+            }
+        }).then(function (value) {
+            switch (value) {
+                case "Ok": {
+                    window.location.href = "dashboard.html";
+                    break;
+                }
+            }
+        });
+           }else{
+                swal({
+                    title: "Credenciales invalidas",
+                    text: "Datos no validos, por favor verifique los datos." ,
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                });
+           }
+        });
+    </script>
 
 </body>
 
