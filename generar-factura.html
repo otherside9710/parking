@@ -38,7 +38,9 @@
                 </div>
             </div>
             <div class="container-fluid">
-                <form id="myForm" class="MyForm" action="http://localhost:8001/services/zonas/add" method="POST">
+                <form id="myForm" class="MyPdfReportObject" ajax="http://localhost:8001/services/facturas/reportPdf" 
+                    event="submit"
+                >
                     <div class="row">
                         <div class="col-12">
                             <div class="card">
@@ -64,14 +66,6 @@
                         </div>
                     </div>
             </div>
-            <div class="MyAlertResponse" id="ok" 
-                alert_title="Zona Guardada" 
-                alert_content="La Zona fue guardada correctamente!" 
-                alert_confirmbutton="OK"
-                alert_type="success" 
-                parent="#myForm" 
-                event="on-success">
-            </div>
             </form>
         </div>
         <div id="footer"></div>
@@ -80,6 +74,7 @@
         <script src="js/plugins/src/js/jquery.initialize.min.js"></script>
         <script src="js/plugins/MyForm.js"></script>
         <script src="js/plugins/MyAlertResponse.js"></script>
+        <script src="js/plugins/MyPdfReportObject.js"></script>
     </div>
     </div>
 </body>
