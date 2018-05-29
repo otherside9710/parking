@@ -4,6 +4,8 @@
 <head>
     <div id="head"></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/wickedpicker.css" />
+    <script src="js/wickedpicker.js"></script>
 </head>
 <script>
     $(document).ready(function () {
@@ -11,6 +13,7 @@
         $('#head').load("fragments/head.html");
         $('#menu').load("fragments/menu.html");
         $('#footer').load("fragments/footer.html");
+        $('.timepicker').wickedpicker();
     });
 </script>
 
@@ -38,7 +41,7 @@
                 </div>
             </div>
             <div class="container-fluid">
-                <form id="myForm">
+                <form id="myForm" class="MyForm" action="http://localhost:8001/services/parqueo/add" method="POST">
                     <div class="row">
                         <div class="col-12">
                             <div class="card">
@@ -81,10 +84,11 @@
                                         <div class="col-md-1"></div>
                                         <div class="col-md-5">
                                             <div class="form-group">
-                                                <label>Tarifa</label>
-                                                <select class="form-control" id="tarifa">
-                                                    <option value="H">Hora</option>
-                                                    <option value="D">Dia</option>
+                                                <label>Zona</label>
+                                                <select class="MySelect form-control" name="zonaCodigo" 
+                                                    ajax="http://localhost:8001/services/zonas/findAll"
+                                                    fields="zonaCodigo,zonaDescripcion"
+                                                    filter="zonaCodigo">
                                                 </select>
                                             </div>
                                         </div>
@@ -103,13 +107,15 @@
                                         <div class="col-md-5">
                                             <div class="form-group">
                                                 <label>Hora Entrada</label>
-                                                <div class="form-group">
-                                                        <label>Estado</label>
-                                                        <select class="form-control" name="parEstado">
-                                                            <option value="A">Activo</option>
-                                                            <option value="I">Inactivo</option>
-                                                        </select>
+                                                <div class="input-group mb-2">
+                                                    <div class="input-group-prepend">
+                                                        <div class="input-group-text">
+                                                            <i class="fa fa-calendar"></i>
+                                                        </div>
                                                     </div>
+                                                        <input id="hf" type="text" required="" name="parHinicio"
+                                                             class="form-control timepicker" placeholder="Ingrese hora Entrada">
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col-md-5">
@@ -121,8 +127,8 @@
                                                             <i class="fa fa-calendar"></i>
                                                         </div>
                                                     </div>
-                                                    <input id="hf" type="datetime-local" required="" 
-                                                           class="form-control datetimepicker" placeholder="Ingrese hora Final">
+                                                    <input id="hf" type="text" required="" name="parHfinal"
+                                                           class="form-control timepicker" placeholder="Ingrese hora Final">
                                                 </div>
                                             </div>
                                         </div>
@@ -148,6 +154,18 @@
             <script src="js/plugins/MyEnable.js"></script>
             <script src="js/plugins/MySelect.js"></script>
             <script src="js/plugins/MyForm.js"></script>
+            <script>
+            $('#myForm').on('on-success-data', function(data, response) {
+                if (response != undefined ) {
+                    swal({
+                        title: "Parqueo Registrado!",
+                        text: response.message,
+                        icon: "success",
+                        buttons: true
+                    });
+                }
+            });
+            </script>
         </div>
     </div>
 </body>
