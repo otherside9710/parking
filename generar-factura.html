@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <div id="head"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<script>
+    $(document).ready(function () {
+        $('#header').load("fragments/header.html");
+        $('#head').load("fragments/head.html");
+        $('#menu').load("fragments/menu.html");
+        $('#footer').load("fragments/footer.html");
+    });
+</script>
+
+<body class="fix-header fix-sidebar">
+    <!-- Preloader - style you can find in spinners.css -->
+    <div class="preloader">
+        <svg class="circular" viewBox="25 25 50 50">
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
+    </div>
+    <div id="main-wrapper">
+        <div class="header" id="header"></div>
+        <div id="menu" class="left-sidebar"></div>
+        <div class="page-wrapper">
+            <div class="row page-titles">
+                <div class="col-md-5 align-self-center">
+                    <h3 class="text-primary">Generar Facturas</h3>
+                </div>
+                <div class="col-md-7 align-self-center">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="javascript:void(0)">Home</a>
+                        </li>
+                        <li class="breadcrumb-item active">Generar Facturas</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <form id="myForm" class="MyForm" action="http://localhost:8001/services/zonas/add" method="POST">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-4"></div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Ticket</label>
+                                                <input class="form-control" type="text" name="ticketCodigo" placeholder="Digite el ticket que se le asigno..">
+                                            </div>
+                                        </div>                                        
+                                    </div>
+                                </div>
+                                <br/>
+                                <div class="row h-100 justify-content-center align-items-center">
+                                    <div class="btn-group" role="group" aria-label="Basic example">
+                                        <button type="submit" class="btn btn-info">Generar</button>
+                                        <button type="button" class="btn btn-secondary">Clean</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="MyAlertResponse" id="ok" 
+                alert_title="Zona Guardada" 
+                alert_content="La Zona fue guardada correctamente!" 
+                alert_confirmbutton="OK"
+                alert_type="success" 
+                parent="#myForm" 
+                event="on-success">
+            </div>
+            </form>
+        </div>
+        <div id="footer"></div>
+        <script src="js/plugins/1/jquery.import.js"></script>
+        <script src="js/plugins/1/jquery.components.js"></script>
+        <script src="js/plugins/src/js/jquery.initialize.min.js"></script>
+        <script src="js/plugins/MyForm.js"></script>
+        <script src="js/plugins/MyAlertResponse.js"></script>
+    </div>
+    </div>
+</body>
+
+</html>
