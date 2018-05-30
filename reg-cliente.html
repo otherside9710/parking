@@ -153,7 +153,7 @@
                                                         <div class="form-group">
                                                             <label>Tipo Vehiculo</label>
                                                             <select class="MySelect form-control" name="tpvCodigo" 
-                                                                ajax="http://186.87.135.186/services/tpvehiculos/findAll" 
+                                                                ajax="http://localhost:8001/services/tpvehiculos/findAll" 
                                                                 fields="tpvCodigo,tpvDescripcion"
                                                                 filter="tpvCodigo">
                                                             </select>
@@ -166,7 +166,7 @@
                                                         <div class="form-group">
                                                             <label>Zona</label>
                                                             <select class="MySelect form-control" name="zonaCodigo" 
-                                                                ajax="http://186.87.135.186/services/zonas/findAll" 
+                                                                ajax="http://localhost:8001/services/zonas/findAll" 
                                                                 fields="zonaCodigo,zonaDescripcion"
                                                                 filter="zonaCodigo">
                                                             </select>
@@ -202,7 +202,7 @@
             <script>
                 $('#myForm').on('send', function(){
                     var $form = $('#myForm');
-                    var $url = "http://186.87.135.186/services/fabrica/transaction";
+                    var $url = "http://localhost:8001/services/fabrica/transaction";
                     var $data = $.serializeObject($form);
                     $.ajax({
                         type: "POST",
